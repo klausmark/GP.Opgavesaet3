@@ -43,6 +43,8 @@
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="NotifyBase.cs" />
+    <Compile Include="Opgave21UserControlViewModel.cs" />
+    <Compile Include="Opgave31UserControlViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

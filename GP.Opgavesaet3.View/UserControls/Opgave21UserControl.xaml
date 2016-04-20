@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="GP.Opgavesaet3.View.UserControls.Opgave21UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Opgave21UserControlViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="525">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" FontSize="20" TextAlignment="Center" Text="Opgave 3.1 - Mere array-gynmastik"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="2.1) 50 tilfældige tal" />
+            <Label Grid.Column="1" Grid.Row="0" Content="{Binding RandomNumbers, Converter={StaticResource ArrayToStringConverter}}" />
+            <Label Grid.Column="0" Grid.Row="1" Content="2.2) Tallene i omvendt rækkefølge" />
+            <Label Grid.Column="1" Grid.Row="1" Content="{Binding RandomNumbersReversed, Converter={StaticResource ArrayToStringConverter}}" />
+            <StackPanel Grid.Column="0" Grid.Row="2" >
+                <Label Content="2.3) Udsnit af tallene ud fra placering" />
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="40" Content="Fra: " />
+                    <TextBox Width="50" Text="{Binding SectionFrom}" />
+                    <Label Width="40" Content="Til: " />
+                    <TextBox Width="50" Text="{Binding SectionTo}" />
+                </StackPanel>
+            </StackPanel>
+            <Label Grid.Column="1" Grid.Row="2" Content="{Binding SectionOfRandomNumbers, Converter={StaticResource ArrayToStringConverter}}" />
+            <StackPanel Grid.Column="0" Grid.Row="3" >
+                <Label Content="2.4) Udsnit af tallene ud fra min max værdier" />
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="40" Content="Min: " />
+                    <TextBox Width="50" Text="{Binding LowestNumbers}" />
+                    <Label Width="40" Content="Max: " />
+                    <TextBox Width="50" Text="{Binding HighestNumbers}" />
+                </StackPanel>
+            </StackPanel>
+            <Label Grid.Column="1" Grid.Row="3" Content="{Binding AboveAndBelovLowestAndHigestNumbers, Converter={StaticResource ArrayToStringConverter}}" />
+            <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal">
+                <Label Content="2.5) Antal forekomster af nummeret" />
+                <TextBox Width="50" Text="{Binding Number}"/>
+            </StackPanel>
+            <Label Grid.Column="1" Grid.Row="4" Content="{Binding OccurrencesOfNumber}" />
+            <Label Grid.Column="0" Grid.Row="5" Content="2.6) Første" />
+            <Label Grid.Column="1" Grid.Row="5" Content="{Binding FirstOccurrenceOfNumber}" />
+        </Grid>
+    </DockPanel>
+    </UserControl>
