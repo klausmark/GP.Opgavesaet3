@@ -5,7 +5,8 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          <ResourceDictionary>
-             <viewHelpers:ViewModelLocator x:Key="Locator"/>
+             <viewHelpers:ViewModelLocator x:Key="ViewModelLocator"/>
+             <viewHelpers:ArrayToStringConverter x:Key="ArrayToStringConverter"/>
          </ResourceDictionary>
     </Application.Resources>
 </Application>
